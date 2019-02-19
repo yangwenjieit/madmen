@@ -78,8 +78,8 @@ function pmText(index){
 }
 function getLoveDate(that){
     var nowTime = new Date().getTime();
-    var beginTime = "1519970760000";//相识日期 从我们加微信开始   2018-03-02 14:06:00
-    var loveBeginTime = "1520953980000"; //相恋日期 从我换微信头像开始   2018-03-13 23:13:00
+    var beginTime = "1519970760000";//相认日期 从我换微信头像开始   2018-03-02 14:06:00
+    var loveBeginTime = "1520953980000"; //相恋日期 从我们加微信开始   2018-03-13 23:13:00
     var totalTime = nowTime-beginTime;
     var loveTotalTime = nowTime-loveBeginTime;
     var totalDate = dateformat(totalTime);
@@ -133,7 +133,6 @@ function getImportantDay(){
       { "date": "5,20", "content": "恋爱表白日，我只想对我的丹妹儿说：我爱你" },
     ]
     var imPortantOldDay = [ //农历重要日期
-      { "date": "1,15", "content": "我和丹妹儿的相识农历纪恋日，我能想到最浪漫的事就是和你一起慢慢变老" },
       { "date": "4,1", "content":"我亲爱的丹妹儿妈妈生日，替我说一声生日快乐哈"},
       { "date": "4,9", "content": "我亲爱的丹妹儿生日，这么重要的日子我相信礼物已经到了或者在来的路上" },
       { "date": "5,5", "content": "端午节，记得吃粽子哟" },
@@ -149,7 +148,7 @@ function getImportantDay(){
     }
     //再对比农历日期
     for (var i = 0; i < imPortantOldDay.length; i++) {
-      if (imPortantOldDay[i].date == oldDate.lMonth + "," + oldDate.lDay) {
+      if (imPortantOldDay[i].date == oldDate[1] + "," + oldDate[2]) {
         if (contentText!="今天是"){
           contentText += "同时也是" + imPortantOldDay[i].content;
         }else{
